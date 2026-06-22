@@ -12,6 +12,18 @@ pipeline {
             }
         }
 
+        stage('testing credentials'){
+            steps{
+                withCredentials([
+                    usernamePassword(
+                        credentialsId: 'github-creds',
+                        usernameVariable: 'GITHUB_USER',
+                        passwordVariable: 'GITHUB_PASS'
+                    )
+                ])
+            }
+        }
+
         stage('Test') {
             steps {
                 echo 'Running Tests'
