@@ -6,7 +6,7 @@ pipeline {
 
         stage('Build') {
             steps {
-                echo 'Building Application'
+                echo 'Building Applications'
                 sh 'date'
                 sh 'hostname'
             }
